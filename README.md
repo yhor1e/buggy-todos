@@ -1,12 +1,7 @@
 # buggy-todos
 
 This repository is a fork of [tastejs/todomvc](https://github.com/tastejs/todomvc) and contains only `React` example.
-
-## Description
-
-This application uses React 17.0.2 to implement a todo application.
-
-- [React](https://reactjs.org/) is a JavaScript library for creating user interfaces.
+This app includes some bugs to get exploratory testing skills.
 
 ## Implementation details
 
@@ -21,6 +16,17 @@ MVC:\
 Model: Maintains the data and behavior of an application\
 View: Displays the model in the ui\
 Controller: Serves as an interface between view & model components
+
+### Features
+
+- [ ] Adding input feilds
+- [ ] i18n
+- [ ] ...
+
+### Bugs
+
+- [ ] ...
+- [ ] ...
 
 ## Build steps
 
