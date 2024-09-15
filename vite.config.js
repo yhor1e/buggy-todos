@@ -7,6 +7,7 @@ export default defineConfig((command, mode) => {
 	const env = loadEnv(mode, process.cwd(), "");
 	console.log(env.NODE_ENV.toUpperCase());
 	return {
+		base: "",
 		plugins: [
 			react(),
 			simpleHtmlPlugin({
