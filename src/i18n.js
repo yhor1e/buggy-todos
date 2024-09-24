@@ -15,6 +15,8 @@ const resources = {
 			left: "left!",
 			item: "item",
 			items: "items",
+			required: "This field is required",
+			minLength: "2 or more characters",
 		},
 	},
 	ja: {
@@ -27,6 +29,8 @@ const resources = {
 			left: "残っています!",
 			item: "やること",
 			items: "やること",
+			required: "必須項目です。",
+			minLength: "2文字以上入力してください。",
 		},
 	},
 };
