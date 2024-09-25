@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-export const I18n = function I18n({}) {
+export const I18n = function I18n() {
 	const { i18n } = useTranslation();
 	return (
 		<div>

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { TOGGLE_ITEM, REMOVE_ITEM, UPDATE_ITEM } from "../constants";
 
-export const Item = memo(function Item({ todo, dispatch, index }) {
+export const Item = memo(function Item({ todo, dispatch }) {
 	const [isWritable, setIsWritable] = useState(false);
 	const { title, completed, id } = todo;
 	const { t } = useTranslation();

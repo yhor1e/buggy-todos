@@ -1,18 +1,5 @@
 import { useCallback } from "react";
 
-const sanitize = (string) => {
-	const map = {
-		"&": "&amp;",
-		"<": "&lt;",
-		">": "&gt;",
-		'"': "&quot;",
-		"'": "&#x27;",
-		"/": "&#x2F;",
-	};
-	const reg = /[&<>"'/]/gi;
-	return string.replace(reg, (match) => map[match]);
-};
-
 export function Input({
 	onSubmit,
 	placeholder,
@@ -22,7 +9,6 @@ export function Input({
 	registerOptions,
 }) {
 	const handleBlur = useCallback(() => {
-		console.log("handleblur");
 		if (onBlur) onBlur();
 	}, [onBlur]);
 
