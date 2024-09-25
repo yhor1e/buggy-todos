@@ -18,11 +18,11 @@ export const Item = memo(function Item({ todo, dispatch }) {
 
 	const toggleItem = useCallback(
 		() => dispatch({ type: TOGGLE_ITEM, payload: { id } }),
-		[dispatch],
+		[dispatch]
 	);
 	const removeItem = useCallback(
 		() => dispatch({ type: REMOVE_ITEM, payload: { id } }),
-		[dispatch],
+		[dispatch]
 	);
 
 	const updateItem = useCallback(() => {
@@ -38,7 +38,7 @@ export const Item = memo(function Item({ todo, dispatch }) {
 			},
 			() => {
 				console.log("errors", errors);
-			},
+			}
 		)();
 	}, [dispatch]);
 
@@ -61,7 +61,6 @@ export const Item = memo(function Item({ todo, dispatch }) {
 			data-testid="todo-item"
 		>
 			<div className="view">
-				{errors[`title${id}`] && <span>{errors[`title${id}`].message}</span>}
 				{isWritable ? (
 					<Input
 						onSubmit={handleUpdate}
@@ -73,7 +72,12 @@ export const Item = memo(function Item({ todo, dispatch }) {
 								handleBlur();
 							},
 						})}
-					/>
+					>
+						{" "}
+						{errors[`title${id}`] && (
+							<span>{errors[`title${id}`].message}</span>
+						)}
+					</Input>
 				) : (
 					<>
 						<input

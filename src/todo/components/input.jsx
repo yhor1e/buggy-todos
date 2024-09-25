@@ -7,6 +7,7 @@ export function Input({
 	defaultValue,
 	onBlur,
 	registerOptions,
+	children,
 }) {
 	const handleBlur = useCallback(() => {
 		if (onBlur) onBlur();
@@ -18,7 +19,7 @@ export function Input({
 				onSubmit();
 			}
 		},
-		[onSubmit],
+		[onSubmit]
 	);
 
 	return (
@@ -35,6 +36,7 @@ export function Input({
 				onKeyDown={handleKeyDown}
 				{...registerOptions}
 			/>
+			{children}
 			<label className="visually-hidden" htmlFor="todo-input">
 				{label}
 			</label>
