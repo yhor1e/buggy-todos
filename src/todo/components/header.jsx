@@ -28,7 +28,7 @@ export function Header({ dispatch }) {
 			},
 			() => {
 				console.log("errors", errors);
-			}
+			},
 		)();
 	}, [dispatch]);
 

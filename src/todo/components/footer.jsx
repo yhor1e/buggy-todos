@@ -10,12 +10,12 @@ export function Footer({ todos, dispatch }) {
 	const { t } = useTranslation();
 	const activeTodos = useMemo(
 		() => todos.filter((todo) => !todo.completed),
-		[todos]
+		[todos],
 	);
 
 	const removeCompleted = useCallback(
 		() => dispatch({ type: REMOVE_COMPLETED_ITEMS }),
-		[dispatch]
+		[dispatch],
 	);
 
 	// prettier-ignore

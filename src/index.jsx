@@ -13,5 +13,5 @@ render(
 			<Route path="*" element={<App />} />
 		</Routes>
 	</HashRouter>,
-	document.getElementById("root")
+	document.getElementById("root"),
 );

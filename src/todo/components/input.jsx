@@ -18,7 +18,7 @@ export function Input({
 				onSubmit();
 			}
 		},
-		[onSubmit]
+		[onSubmit],
 	);
 
 	return (
