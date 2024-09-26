@@ -36,10 +36,10 @@ export function Input({
 				onKeyDown={handleKeyDown}
 				{...registerOptions}
 			/>
-			{children}
 			<label className="visually-hidden" htmlFor="todo-input">
 				{label}
 			</label>
+			{children}
 		</div>
 	);
 }

@@ -73,7 +73,6 @@ export const Item = memo(function Item({ todo, dispatch }) {
 							},
 						})}
 					>
-						{" "}
 						{errors[`title${id}`] && (
 							<span>{errors[`title${id}`].message}</span>
 						)}

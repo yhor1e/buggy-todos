@@ -38,13 +38,14 @@ export function Header({ dispatch }) {
 			<header className="header" data-testid="header">
 				<h1>todos</h1>
 				<I18n />
-				{errors.title && <span>{errors.title.message}</span>}
 				<Input
 					onSubmit={addItem}
 					label="New Todo Input"
 					placeholder={t("placeholder")}
 					registerOptions={registerOptions}
-				></Input>
+				>
+					{errors.title && <span>{errors.title.message}</span>}
+				</Input>
 			</header>
 		</>
 	);
