@@ -4,6 +4,7 @@ import { Input } from "./input";
 
 import { ADD_ITEM } from "../constants";
 import { useForm } from "react-hook-form";
+import { I18n } from "./i18n";
 
 export function Header({ dispatch }) {
 	const { t } = useTranslation();
@@ -36,7 +37,7 @@ export function Header({ dispatch }) {
 		<>
 			<header className="header" data-testid="header">
 				<h1>todos</h1>
-
+				<I18n />
 				{errors.title && <span>{errors.title.message}</span>}
 				<Input
 					onSubmit={addItem}
