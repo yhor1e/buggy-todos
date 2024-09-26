@@ -23,5 +23,22 @@ but useful for people who use screen readers */
 	pointer-events: none;
 }
 
-.toggle-lang {
+.info {
+	margin: 0 auto 20px;
+}
+.footer::before {
+	content: "";
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+@media (max-width: 430px) {
+    .filters {
+        bottom: 80px;
+    }
 }

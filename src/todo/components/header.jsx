@@ -28,7 +28,7 @@ export function Header({ dispatch }) {
 			},
 			() => {
 				console.log("errors", errors);
-			},
+			}
 		)();
 	}, [dispatch]);
 
@@ -36,6 +36,7 @@ export function Header({ dispatch }) {
 		<>
 			<header className="header" data-testid="header">
 				<h1>todos</h1>
+
 				{errors.title && <span>{errors.title.message}</span>}
 				<Input
 					onSubmit={addItem}
