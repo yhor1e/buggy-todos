@@ -1,3 +1,4 @@
+import { Reducer } from "react";
 import {
 	ADD_ITEM,
 	UPDATE_ITEM,
@@ -51,43 +52,40 @@ function nanoid(size = 21) {
 	return id;
 }
 
-// @ts-expect-error TS(7006): Parameter 'state' implicitly has an 'any' type.
-export const todoReducer = (state, action) => {
+export const todoReducer: Reducer<Todo[], { type: string; payload?: Todo }> = (
+	state,
+	action
+): Todo[] => {
 	switch (action.type) {
 		case ADD_ITEM:
 			return state.concat({
 				id: nanoid(),
-				title: action.payload.title,
+				title: action.payload?.title,
 				completed: false,
 			});
 		case UPDATE_ITEM:
-// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
-				todo.id === action.payload.id
-					? { ...todo, title: action.payload.title }
-					: todo,
+				todo.id === action.payload?.id
+					? { ...todo, title: action.payload?.title }
+					: todo
 			);
 		case REMOVE_ITEM:
-// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
-			return state.filter((todo) => todo.id !== action.payload.id);
+			return state.filter((todo) => todo.id !== action.payload?.id);
 		case TOGGLE_ITEM:
-// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
-				todo.id === action.payload.id
+				todo.id === action.payload?.id
 					? { ...todo, completed: !todo.completed }
-					: todo,
+					: todo
 			);
 		case REMOVE_ALL_ITEMS:
 			return [];
 		case TOGGLE_ALL:
-// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
-				todo.completed !== action.payload.completed
-					? { ...todo, completed: action.payload.completed }
-					: todo,
+				todo.completed !== action.payload?.completed
+					? { ...todo, completed: action.payload?.completed }
+					: todo
 			);
 		case REMOVE_COMPLETED_ITEMS:
-// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.filter((todo) => !todo.completed);
 	}
 
