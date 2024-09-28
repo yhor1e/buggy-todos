@@ -1,12 +1,17 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { memo, useState, useCallback } from "react";
 import classnames from "classnames";
 import { useForm } from "react-hook-form";
+// @ts-expect-error TS(6142): Module './input' was resolved to '/Users/yhorie/wo... Remove this comment to see the full error message
 import { Input } from "./input";
 import { useTranslation } from "react-i18next";
 
 import { TOGGLE_ITEM, REMOVE_ITEM, UPDATE_ITEM } from "../constants";
 
-export const Item = memo(function Item({ todo, dispatch }) {
+export const Item = memo(function Item({
+    todo,
+    dispatch
+}: any) {
 	const [isWritable, setIsWritable] = useState(false);
 	const { title, completed, id } = todo;
 	const { t } = useTranslation();
@@ -56,12 +61,15 @@ export const Item = memo(function Item({ todo, dispatch }) {
 	}, [id, removeItem, updateItem]);
 
 	return (
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 		<li
 			className={classnames({ completed: todo.completed })}
 			data-testid="todo-item"
 		>
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 			<div className="view">
 				{isWritable ? (
+// @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
 					<Input
 						onSubmit={handleUpdate}
 						label="Edit Todo Input"
@@ -74,11 +82,14 @@ export const Item = memo(function Item({ todo, dispatch }) {
 						})}
 					>
 						{errors[`title${id}`] && (
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 							<span>{errors[`title${id}`].message}</span>
 						)}
 					</Input>
 				) : (
+// @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
 					<>
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 						<input
 							className="toggle"
 							type="checkbox"
@@ -86,12 +97,15 @@ export const Item = memo(function Item({ todo, dispatch }) {
 							checked={completed}
 							onChange={toggleItem}
 						/>
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 						<label
 							data-testid="todo-item-label"
 							onDoubleClick={handleDoubleClick}
 						>
 							{title}
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 						</label>
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 						<button
 							className="destroy"
 							data-testid="todo-item-button"
@@ -99,7 +113,9 @@ export const Item = memo(function Item({ todo, dispatch }) {
 						/>
 					</>
 				)}
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 			</div>
+// @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
 		</li>
 	);
 });

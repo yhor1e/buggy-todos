@@ -1,5 +1,7 @@
 import globals from "globals";
+// @ts-expect-error TS(7016): Could not find a declaration file for module '@esl... Remove this comment to see the full error message
 import pluginJs from "@eslint/js";
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'esli... Remove this comment to see the full error message
 import pluginReact from "eslint-plugin-react";
 
 export default [

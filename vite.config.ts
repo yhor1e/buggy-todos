@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import simpleHtmlPlugin from "vite-plugin-simple-html";
 
 // https://vitejs.dev/config/
-export default defineConfig((command, mode) => {
+export default defineConfig((mode: any) => {
 	const env = loadEnv(mode, process.cwd(), "");
 	console.log(env.NODE_ENV.toUpperCase());
 	return {

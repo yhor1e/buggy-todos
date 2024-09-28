@@ -51,6 +51,7 @@ function nanoid(size = 21) {
 	return id;
 }
 
+// @ts-expect-error TS(7006): Parameter 'state' implicitly has an 'any' type.
 export const todoReducer = (state, action) => {
 	switch (action.type) {
 		case ADD_ITEM:
@@ -60,14 +61,17 @@ export const todoReducer = (state, action) => {
 				completed: false,
 			});
 		case UPDATE_ITEM:
+// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
 				todo.id === action.payload.id
 					? { ...todo, title: action.payload.title }
 					: todo,
 			);
 		case REMOVE_ITEM:
+// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.filter((todo) => todo.id !== action.payload.id);
 		case TOGGLE_ITEM:
+// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
 				todo.id === action.payload.id
 					? { ...todo, completed: !todo.completed }
@@ -76,12 +80,14 @@ export const todoReducer = (state, action) => {
 		case REMOVE_ALL_ITEMS:
 			return [];
 		case TOGGLE_ALL:
+// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.map((todo) =>
 				todo.completed !== action.payload.completed
 					? { ...todo, completed: action.payload.completed }
 					: todo,
 			);
 		case REMOVE_COMPLETED_ITEMS:
+// @ts-expect-error TS(7006): Parameter 'todo' implicitly has an 'any' type.
 			return state.filter((todo) => !todo.completed);
 	}
 
