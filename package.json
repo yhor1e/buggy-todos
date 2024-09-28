@@ -1,6 +1,6 @@
 {
   "name": "buggy-todos",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A fork of [tastejs/todomvc](https://github.com/tastejs/todomvc) and contains only `React` example.This app includes some bugs to get exploratory testing skills.",
   "type": "module",
   "private": true,
