@@ -5,6 +5,7 @@ import { Footer } from "./components/footer";
 import { FootNote } from "./components/footnote";
 import { todoReducer } from "./reducer";
 import { Excalidraw } from "@excalidraw/excalidraw";
+import { I18n } from "./components/i18n";
 
 import "./app.css";
 
@@ -22,13 +23,15 @@ export function App() {
 	return (
 		<div className="grid-container-element">
 			<div className="grid-child-element">
+				<h1>todos</h1>
+				<FootNote />
+				<I18n />
 				<Header dispatch={dispatch} />
 				<Main todos={todos} dispatch={dispatch} />
 				<Footer todos={todos} dispatch={dispatch} />
-				<FootNote />
 			</div>
 			<div className="grid-child-element">
-				<div style={{ height: "500px" }}>
+				<div style={{ height: "100%" }}>
 					<Excalidraw />
 				</div>
 			</div>

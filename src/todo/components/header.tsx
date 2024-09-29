@@ -4,7 +4,6 @@ import { Input } from "./input";
 
 import { ADD_ITEM } from "../constants";
 import { useForm } from "react-hook-form";
-import { I18n } from "./i18n";
 
 export function Header({
 	dispatch,
@@ -35,8 +34,6 @@ export function Header({
 	return (
 		<>
 			<header className="header" data-testid="header">
-				<h1>todos</h1>
-				<I18n />
 				<Input
 					onSubmit={addItem}
 					label="New Todo Input"
