@@ -5,7 +5,6 @@ import simpleHtmlPlugin from "vite-plugin-simple-html";
 // https://vitejs.dev/config/
 export default defineConfig((mode: any) => {
 	const env = loadEnv(mode, process.cwd(), "");
-	console.log(env.NODE_ENV.toUpperCase());
 	return {
 		base: "",
 		plugins: [
@@ -21,5 +20,9 @@ export default defineConfig((mode: any) => {
 				},
 			}),
 		],
+		define: {
+			// https://docs.excalidraw.com/docs/@excalidraw/excalidraw/integration
+			"process.env.IS_PREACT": JSON.stringify("true"),
+		},
 	};
 });
