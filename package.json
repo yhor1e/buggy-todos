@@ -31,6 +31,7 @@
     "vite-plugin-simple-html": "^0.1.2"
   },
   "dependencies": {
+    "@excalidraw/excalidraw": "^0.17.6",
     "classnames": "^2.2.5",
     "i18next": "^23.15.1",
     "react": "^18.3.1",

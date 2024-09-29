@@ -48,8 +48,24 @@ but useful for people who use screen readers */
     right: 0;
     top: -30px;
 }
+
 .toggle-lang button {
 	border: 1px solid black;
 	padding: 0 10px;
 }
 
+.grid-container-element {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    border: 1px solid black;
+    width: 100%;
+}
+.grid-child-element {
+    margin: 10px;
+ }
+
+ body {
+	min-width: 460px;
+    max-width: 100%;
+ }
