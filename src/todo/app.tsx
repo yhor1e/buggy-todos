@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { Header } from "./components/header";
 import { Main } from "./components/main";
 import { Footer } from "./components/footer";
@@ -10,6 +10,15 @@ import "./app.css";
 
 export function App() {
 	const [todos, dispatch] = useReducer(todoReducer, []);
+	useEffect(() => {
+		const onBeforeUnload = (event: BeforeUnloadEvent) => {
+			event.preventDefault();
+		};
+		window.addEventListener("beforeunload", onBeforeUnload);
+		return () => {
+			window.removeEventListener("beforeunload", onBeforeUnload);
+		};
+	}, []);
 	return (
 		<div className="grid-container-element">
 			<div className="grid-child-element">
