@@ -67,7 +67,7 @@ but useful for people who use screen readers */
 	height: 100%;
 }
 .grid-child-element {
-    margin: 10px;
+    margin: 0 10px;
 	height: 100%;
  }
 
